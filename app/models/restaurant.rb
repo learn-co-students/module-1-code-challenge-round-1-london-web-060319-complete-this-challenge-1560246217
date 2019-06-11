@@ -1,5 +1,5 @@
 class Restaurant
-  attr_reader :name
+  attr_reader :name, :customers
   @@all = []
 
   def initialize(name)
@@ -9,6 +9,14 @@ class Restaurant
 
   def self.all
     @@all
+  end
+
+  def reviews
+    @@all.select {|restaurant| restaurant.review == self}
+  end
+
+  def average_star_rating
+
   end 
 
 end
