@@ -24,6 +24,7 @@ class Customer
   end
 
   def customer_data
+    #  helper method that sources all relevent customer data
     Review.all.select{|r| r.customer == self} 
   end
 

@@ -28,12 +28,14 @@ class Restaurant
   end
 
   def content_length
+    # helper method for the following longest review method
     content_hash = {}
     reviews.collect{|f| content_hash[f] = f.content.length}
     content_hash
   end
 
   def longest_review
+    # returns the longest review content for a given restaurant
     content_length.max_by{|rc,s| s }[0]
   end
 
